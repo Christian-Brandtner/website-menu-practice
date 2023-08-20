@@ -1,1 +1,1 @@
-A template readme file to be filled in upon the start and finish of a new project.
+A navbar made using SASS based upon one found on Colorlib. https://preview.colorlib.com/theme/bootstrap/website-menu-17/ - Colorlib
