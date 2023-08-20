@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+@mixin flex-center($direction, $background) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+    background: $background;
+}
+
+$bg-light: #fafafa;
+$bg-dark: #252525;
+$bg-dark-secondary: #333333;
+$bg-footer: #090909;
+
+body {
+    padding-top: 7rem;
+    font-family: "Poppins", Arial, sans-serif;
+    background: $bg-light;
+    main {
+        background: $bg-dark-secondary;
+        height: 75vh;
+    }
+    footer {
+        background:  $bg-footer;
+        height: 12vh;
+    }
+    .title {
+        display: grid;
+        justify-content: center;
+
+        height: 98px;
+
+        h2 {
+            font-size: 28px;
+            color: #000;
+
+            line-height: 1.5;
+            font-weight: 400;
+            font-family: "Poppins", Arial, sans-serif;
+
+            margin-bottom: 0.5rem;
+        }
+    }
+
+
+
+    .nav-top {
+        // @include flex-center(row, $bg-light);
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        padding: 0rem 3rem;
+        margin-bottom: 0.5rem;
+
+        .socials {
+
+            justify-self: baseline;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+
+            .fa {
+                text-decoration: none;
+                @include flex-center(row, $bg-light);
+                width: 38px;
+                height: 38px;
+                border: solid 1px rgba(#353535, 0.1);
+                border-radius: 90px;
+
+                margin-right: 4px;
+
+                
+                color: #4d4d4d;
+                background:  transparent;
+
+                transition: background-color 0.3s, color 0.3s;
+
+                &:hover {
+                    background-color: red;
+                    color: white;
+                }
+            }
+        }
+
+        .logo {
+            justify-self: center;
+            text-align: center;
+            color: #000;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 1.2;
+            margin-bottom: 30px;
+
+            a {
+                color: #000;
+                text-decoration: none;
+            }
+
+            span {
+                display: block;
+                font-size: 12px;
+                font-weight: 500;
+                color: rgba(0, 0, 0, 0.3);
+            }
+        }
+
+        .search-bar {
+            justify-self: end;
+            width: 300px;
+            display: flex;
+
+            .search-box {
+                padding-left: 1rem;
+                border-radius: 90px 0 0 90px;
+                width: calc(98% - 50px);
+                height: 48px;
+
+                &::placeholder {
+                    font-size: 15px;
+                    font-family: "Poppins", Arial, sans-serif;
+                }
+            }
+
+            .search-submit {
+                @include flex-center(row, red);
+                color: #fff;
+                width: 52px;
+                height: 48px;
+                background: red;
+                border-radius: 0 90px 90px 0;
+            }
+        }
+    }
+
+}
+
+.navbar {
+    line-height: 1.8;
+
+    .nav-list {
+        @include flex-center(row, $bg-dark);
+        list-style-type: none;
+
+        .nav-item {
+            position: relative;
+            padding: 1.5rem 20px;
+            display: block;
+
+            font-size: 11px;
+            font-weight: 500;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+
+            overflow: hidden;
+
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: 0;
+
+                left: 0;
+                width: 100%;
+                height: 2px;
+
+                background-color: red;
+
+                transform: translateX(-105%);
+
+                transition: transform 0.3s ease-in-out;
+
+            }
+
+            &:hover {
+                &::before {
+                    transform: translateX(0);
+                }
+            }
+
+            .current {
+                &:visited {
+                    color: red;
+                }
+            }
+
+            a {
+                color: #fff;
+
+                &:link {
+                    text-decoration: none;
+                    color: #fff;
+                }
+
+                &:visited {
+                    color: #fff;
+                }
+
+
+            }
+
+        }
+
+    }
+}

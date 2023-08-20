@@ -1,0 +1,1 @@
+A template readme file to be filled in upon the start and finish of a new project.
