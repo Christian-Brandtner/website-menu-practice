@@ -178,7 +178,7 @@ body .nav-top .search-bar .search-submit {
   display: none;
 }
 .navbar .nav-list .nav-item .dropdown .dropdown-list .dropdown-item {
-  padding: 0.25rem 1.5rem;
+  padding: 0.5rem 1.5rem;
   display: block;
 }
 .navbar .nav-list .nav-item .dropdown .dropdown-list .dropdown-item:hover {
