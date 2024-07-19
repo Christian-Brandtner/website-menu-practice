@@ -191,7 +191,9 @@ body {
                 &::after {
                     width: 100%;
                 }
-
+                a {
+                    color: red;
+                }
                 .dropdown {
                     .dropdown-list {
                         display: block;
@@ -210,13 +212,16 @@ body {
                 .dropdown-list {
                     list-style-type: none;
                     display: none;
+
                     .dropdown-item {
                         padding: 0.5rem 1.5rem;
                         display: block;
+
                         &:hover {
                             background: red;
                         }
                     }
+
                     a {
                         white-space: nowrap;
                         line-height: normal;
@@ -229,41 +234,7 @@ body {
                 }
             }
 
-
-
-
-
-
-
-
-            // &::before {
-            //     content: "";
-            //     position: absolute;
-            //     bottom: 0;
-
-            //     left: 0;
-            //     width: 100%;
-            //     height: 2px;
-
-            //     background-color: red;
-
-            //     transform: translateX(-105%);
-
-            //     transition: transform 0.3s ease-in-out;
-
-            // }
-
-            // &:hover {
-            //     &::before {
-            //         transform: translateX(0);
-            //     }
-            // }
-
-            .current {
-                &:visited {
-                    color: red;
-                }
-            }
+            
 
             a {
                 color: #fff;
@@ -272,12 +243,11 @@ body {
                     text-decoration: none;
                     color: #fff;
                 }
+                
+            }
 
-                &:visited {
-                    color: #fff;
-                }
-
-
+            .current {
+                color: red;
             }
 
         }

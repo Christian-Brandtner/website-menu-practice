@@ -162,6 +162,9 @@ body .nav-top .search-bar .search-submit {
 .navbar .nav-list .nav-item:hover::after {
   width: 100%;
 }
+.navbar .nav-list .nav-item:hover a {
+  color: red;
+}
 .navbar .nav-list .nav-item:hover .dropdown .dropdown-list {
   display: block;
 }
@@ -193,9 +196,6 @@ body .nav-top .search-bar .search-submit {
   color: #000;
   letter-spacing: normal;
 }
-.navbar .nav-list .nav-item .current:visited {
-  color: red;
-}
 .navbar .nav-list .nav-item a {
   color: #fff;
 }
@@ -203,6 +203,6 @@ body .nav-top .search-bar .search-submit {
   text-decoration: none;
   color: #fff;
 }
-.navbar .nav-list .nav-item a:visited {
-  color: #fff;
+.navbar .nav-list .nav-item .current {
+  color: red;
 }/*# sourceMappingURL=main.css.map */
