@@ -24,7 +24,7 @@ $bg-dark-secondary: #333333;
 $bg-footer: #090909;
 
 body {
-    padding-top: 7rem;
+
     font-family: "Poppins", Arial, sans-serif;
     background: $bg-light;
 
@@ -39,48 +39,52 @@ body {
         height: 12vh;
     }
 
-    .title {
-        display: grid;
-        justify-content: center;
-
-        height: 98px;
-
-        h2 {
-            font-size: 28px;
-            color: #000;
-
-            line-height: 1.5;
-            font-weight: 400;
-            font-family: "Poppins", Arial, sans-serif;
-
-            margin-bottom: 0.5rem;
-        }
-    }
-
 
 
     .nav-top {
         // @include flex-center(row, $bg-light);
         display: grid;
-        @media screen and (max-width: 767.99px) {
+        align-items: center;
+        padding: 2rem 3rem 1rem 3rem;
+        margin: 0 auto;
+        max-width: 2560px;
+        justify-items: center;
+        @media screen and (max-width: 399.99px) {
             justify-content: center;
+            
+            grid-template-areas: 
+                'logo'
+                'socials'
+                'search';
+        }
+
+        @media screen and (min-width:400px) and (max-width: 767.99px) {
+            justify-content: center;
+            grid-template-areas:
+                'logo logo'
+                'socials search';
+            gap: 1rem;
+
             .socials {
                 justify-self: center;
+                padding: 1rem 0 1rem 0;
             }
+
         }
+
         @media screen and (min-width: 768px) {
             .socials {
-                    justify-self: baseline;
-                }
+                justify-self: baseline;
+            }
+
+            grid-template-areas: 'socials logo search ';
             grid-template-columns: repeat(3, 1fr);
         }
 
-        padding: 0rem 3rem;
-        margin-bottom: 0.5rem;
 
         .socials {
 
-           
+            grid-area: socials;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
 
@@ -108,6 +112,7 @@ body {
         }
 
         .logo {
+            grid-area: logo;
             justify-self: center;
             text-align: center;
             color: #000;
@@ -115,7 +120,6 @@ body {
             font-weight: 700;
             font-size: 20px;
             line-height: 1.2;
-            margin-bottom: 30px;
 
             a {
                 color: #000;
@@ -134,6 +138,7 @@ body {
             justify-self: end;
             width: 300px;
             display: flex;
+            grid-area: search;
 
             .search-box {
                 padding-left: 1rem;
@@ -150,7 +155,7 @@ body {
             .search-submit {
                 @include flex-center(row, red);
                 color: #fff;
-                width: 52px;
+                width: 3rem;
                 height: 48px;
                 background: red;
                 border-radius: 0 90px 90px 0;
@@ -202,9 +207,11 @@ body {
                 &::after {
                     width: 100%;
                 }
+
                 a {
                     color: red;
                 }
+
                 .dropdown {
                     .dropdown-list {
                         display: block;
@@ -213,7 +220,7 @@ body {
             }
 
             .dropdown {
-                width: 175%;
+                width: 8rem;
                 background: #fff;
                 list-style-type: none;
                 top: 100%;
@@ -245,7 +252,7 @@ body {
                 }
             }
 
-            
+
 
             a {
                 color: #fff;
@@ -254,7 +261,7 @@ body {
                     text-decoration: none;
                     color: #fff;
                 }
-                
+
             }
 
             .current {

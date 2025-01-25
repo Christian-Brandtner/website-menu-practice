@@ -9,7 +9,6 @@
 }
 
 body {
-  padding-top: 7rem;
   font-family: "Poppins", Arial, sans-serif;
   background: #fafafa;
 }
@@ -22,34 +21,34 @@ body footer {
   background: #090909;
   height: 12vh;
 }
-body .title {
-  display: grid;
-  justify-content: center;
-  height: 98px;
-}
-body .title h2 {
-  font-size: 28px;
-  color: #000;
-  line-height: 1.5;
-  font-weight: 400;
-  font-family: "Poppins", Arial, sans-serif;
-  margin-bottom: 0.5rem;
-}
 body .nav-top {
   display: grid;
-  padding: 0rem 3rem;
-  margin-bottom: 0.5rem;
+  align-items: center;
+  padding: 2rem 3rem 1rem 3rem;
+  margin: 0 auto;
+  max-width: 2560px;
+  justify-items: center;
 }
-@media screen and (max-width: 767.99px) {
+@media screen and (max-width: 399.99px) {
   body .nav-top {
     justify-content: center;
+    grid-template-areas: "logo" "socials" "search";
+  }
+}
+@media screen and (min-width: 400px) and (max-width: 767.99px) {
+  body .nav-top {
+    justify-content: center;
+    grid-template-areas: "logo logo" "socials search";
+    gap: 1rem;
   }
   body .nav-top .socials {
     justify-self: center;
+    padding: 1rem 0 1rem 0;
   }
 }
 @media screen and (min-width: 768px) {
   body .nav-top {
+    grid-template-areas: "socials logo search ";
     grid-template-columns: repeat(3, 1fr);
   }
   body .nav-top .socials {
@@ -57,6 +56,7 @@ body .nav-top {
   }
 }
 body .nav-top .socials {
+  grid-area: socials;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
@@ -81,6 +81,7 @@ body .nav-top .socials .fa:hover {
   color: white;
 }
 body .nav-top .logo {
+  grid-area: logo;
   justify-self: center;
   text-align: center;
   color: #000;
@@ -88,7 +89,6 @@ body .nav-top .logo {
   font-weight: 700;
   font-size: 20px;
   line-height: 1.2;
-  margin-bottom: 30px;
 }
 body .nav-top .logo a {
   color: #000;
@@ -104,6 +104,7 @@ body .nav-top .search-bar {
   justify-self: end;
   width: 300px;
   display: flex;
+  grid-area: search;
 }
 body .nav-top .search-bar .search-box {
   padding-left: 1rem;
@@ -126,7 +127,7 @@ body .nav-top .search-bar .search-submit {
   flex-direction: row;
   background: red;
   color: #fff;
-  width: 52px;
+  width: 3rem;
   height: 48px;
   background: red;
   border-radius: 0 90px 90px 0;
@@ -179,7 +180,7 @@ body .nav-top .search-bar .search-submit {
   display: block;
 }
 .navbar .nav-list .nav-item .dropdown {
-  width: 175%;
+  width: 8rem;
   background: #fff;
   list-style-type: none;
   top: 100%;
