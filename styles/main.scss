@@ -62,14 +62,25 @@ body {
     .nav-top {
         // @include flex-center(row, $bg-light);
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        @media screen and (max-width: 767.99px) {
+            justify-content: center;
+            .socials {
+                justify-self: center;
+            }
+        }
+        @media screen and (min-width: 768px) {
+            .socials {
+                    justify-self: baseline;
+                }
+            grid-template-columns: repeat(3, 1fr);
+        }
 
         padding: 0rem 3rem;
         margin-bottom: 0.5rem;
 
         .socials {
 
-            justify-self: baseline;
+           
             display: grid;
             grid-template-columns: repeat(4, 1fr);
 

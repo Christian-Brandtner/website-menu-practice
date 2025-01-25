@@ -37,12 +37,26 @@ body .title h2 {
 }
 body .nav-top {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   padding: 0rem 3rem;
   margin-bottom: 0.5rem;
 }
+@media screen and (max-width: 767.99px) {
+  body .nav-top {
+    justify-content: center;
+  }
+  body .nav-top .socials {
+    justify-self: center;
+  }
+}
+@media screen and (min-width: 768px) {
+  body .nav-top {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  body .nav-top .socials {
+    justify-self: baseline;
+  }
+}
 body .nav-top .socials {
-  justify-self: baseline;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
@@ -98,10 +112,6 @@ body .nav-top .search-bar .search-box {
   height: 48px;
 }
 body .nav-top .search-bar .search-box::-moz-placeholder {
-  font-size: 15px;
-  font-family: "Poppins", Arial, sans-serif;
-}
-body .nav-top .search-bar .search-box:-ms-input-placeholder {
   font-size: 15px;
   font-family: "Poppins", Arial, sans-serif;
 }
